@@ -21,7 +21,7 @@ class Archiso:
     
     def copy_pacman_conf(self):
         loguru.logger.info(f'Copying pacman.conf...')
-        result = os.system(f'cp ./resources/pacman.conf {self.target_iso_dir}/pacman.conf')
+        result = os.system(f'cp ./resources/archiso/pacman.conf {self.target_iso_dir}/pacman.conf')
         
         if result != 0:
             raise Exception(f'Failed to pacman.conf. Code: {result}')
