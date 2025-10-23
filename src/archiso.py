@@ -27,7 +27,7 @@ class Archiso:
         if os.system(f'rm {self.target_iso_dir}/pacman.conf') != 0:
             raise Exception(f'Unable to remove old pacman.conf. Code: {result}')
 
-        os.system(f'cp ./resources/archiso/pacman.conf /etc/pacman.conf') # Maybe this works????
+        os.system(f'cp ./resources/archiso/pacman.conf {self.target_iso_dir}/airoots/etc/pacman.conf') # Maybe this works????
         result = os.system(f'cp ./resources/archiso/pacman.conf {self.target_iso_dir}/pacman.conf')
         
         if result != 0:
