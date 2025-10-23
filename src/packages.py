@@ -16,6 +16,8 @@ class Packages(Archiso):
 
         with open(self.packages_file, 'r') as f:
             self.packages = f.readlines()
+        
+        loguru.logger.info(f'Loaded {len(self.packages)} packages: {', '.join(self.packages)}')
     
     def add_packages(self, packages: List[str]):
         for package in packages:
@@ -27,6 +29,6 @@ class Packages(Archiso):
     
     def dump_packages(self):
         loguru.logger.info(f'Dumped {len(self.packages)} packages into {self.packages_file}...')
-        
+
         with open(self.packages_file, 'w') as f:
             f.write('\n'.join(self.packages))
