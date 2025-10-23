@@ -24,3 +24,8 @@ jobs:
       - name: Build ISO
         run: |
           ./src/start_building.sh
+      
+      - name: Upload the ISO to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: out/*
