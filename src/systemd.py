@@ -9,7 +9,11 @@ class Systemd(Archiso):
     
     def activate_system_service(self, name: str, target: str):
         loguru.logger.info(f'Activating `{name}` service...')
-        result = os.system(f'ln -s /usr/lib/systemd/system/{name}.service archlive/airootfs/etc/systemd/system/{target}.target.wants/{name}.service')
+
+        target_systemd_dir = f'{self.target_iso_dir}/airootfs/etc/systemd/system/{target}.target.wants'
+
+        os.system(f'mkdir -p {target_systemd_dir}')
+        result = os.system(f'ln -s /usr/lib/systemd/system/{name}.service {target_systemd_dir}/{name}.service')
         
         if result != 0:
             raise Exception(f'Failed to create symlink. Code: {result}')
