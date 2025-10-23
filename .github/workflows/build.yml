@@ -1,10 +1,6 @@
 name: Build Project GDL ISO
 
 on:
-  push:
-    branches:
-      - main
-
   workflow_dispatch:
 
 env:

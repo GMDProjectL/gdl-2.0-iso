@@ -16,6 +16,7 @@ def main():
     loguru.logger.info("Builder is ready.")
 
     archiso.copy_releng_config()
+    archiso.copy_pacman_conf()
     
     users.configure_user('root', '', '/root', '/usr/bin/zsh', 0, 0)
     users.configure_shadow('root', '', '/root', '/usr/bin/zsh', 0, 0)
