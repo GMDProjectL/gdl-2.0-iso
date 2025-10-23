@@ -3,12 +3,14 @@ from archiso import Archiso
 from users import Users
 from systemd import Systemd
 from packages import Packages
+from temp_sh import TempSh
 
 target_iso_dir = "archiso"
 archiso = Archiso(target_iso_dir)
 users = Users(target_iso_dir)
 systemd = Systemd(target_iso_dir)
 packages = Packages(target_iso_dir)
+temp_sh = TempSh()
 
 def main():
     loguru.logger.info("Builder is ready.")
@@ -45,6 +47,7 @@ def main():
     archiso.copy_os_release()
 
     archiso.build_iso()
+    temp_sh.upload()
 
 
 if __name__ == '__main__':
