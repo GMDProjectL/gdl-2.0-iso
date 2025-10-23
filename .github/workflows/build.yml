@@ -7,6 +7,9 @@ on:
 
   workflow_dispatch:
 
+env:
+  ARCH_CONTAINER_NAME: "gdl"
+
 jobs:
   buildiso:
     runs-on: ubuntu-latest
