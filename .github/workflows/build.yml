@@ -13,3 +13,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Prepare the environment
+        run: |
+          ./src/prepare_environment.sh
+
+      - name: Build ISO
+        run: |
+          ./src/start_building.sh

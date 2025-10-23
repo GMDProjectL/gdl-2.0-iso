@@ -13,5 +13,3 @@ distrobox enter --root ${ARCH_CONTAINER_NAME} -- \
     sudo pacman -Syu \
         arch-install-scripts archiso python-loguru \
         --noconfirm
-
-distrobox enter --root ${ARCH_CONTAINER_NAME} -- python src/build.py
