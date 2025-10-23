@@ -15,7 +15,7 @@ class Packages(Archiso):
         loguru.logger.info(f'Loading existing packages...')
 
         with open(self.packages_file, 'r') as f:
-            self.packages = map(lambda s: s.replace('\n', '').strip(), f.readlines())
+            self.packages = list(map(lambda s: s.replace('\n', '').strip(), f.readlines()))
         
         loguru.logger.info(f'Loaded {len(self.packages)} packages: {', '.join(self.packages)}')
     
