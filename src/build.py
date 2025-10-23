@@ -39,6 +39,13 @@ def main():
 
     systemd.activate_system_service('NetworkManager', 'multi-user')
 
+    archiso.copy_profile_def()
+    archiso.copy_grub_config()
+    archiso.copy_systemd_boot_config()
+    archiso.copy_os_release()
+
+    archiso.build_iso()
+
 
 if __name__ == '__main__':
     main()
