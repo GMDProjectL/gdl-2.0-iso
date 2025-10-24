@@ -38,7 +38,7 @@ def main():
         'vulkan-intel', 'vulkan-nouveau', 'vulkan-mesa-layers', 'networkmanager',
         'linux-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms'
     ])
-    packages.remove_packages(['broadcom-wl', 'grml-zsh-config'])
+    packages.remove_packages(['broadcom-wl', 'grml-zsh-config', 'lftp'])
 
     kde.install_aio()
     
