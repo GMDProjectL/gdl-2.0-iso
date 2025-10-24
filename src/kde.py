@@ -11,6 +11,7 @@ class KDE(Archiso):
         self.systemd = systemd
 
     def install_base_kde(self):
+        loguru.logger.info("Adding KDE packages")
         self.packages.add_packages([
             'plasma', 'sddm', 'konsole'
         ])
@@ -21,7 +22,7 @@ class KDE(Archiso):
         autologin_dir = f'{self.target_iso_dir}/airootfs/etc/sddm.conf.d'
         os.system(f'mkdir -p {autologin_dir}')
 
-        result = os.system(f'cp ../resources/etc/sddm.conf.d/autologin.conf {autologin_dir}/autologin.conf')
+        result = os.system(f'cp ./resources/etc/sddm.conf.d/autologin.conf {autologin_dir}/autologin.conf')
         if result != 0:
             raise Exception(f'Unable to copy autologin.conf. Code: {result}')
         
