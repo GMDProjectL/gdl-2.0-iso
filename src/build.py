@@ -4,6 +4,7 @@ from users import Users
 from systemd import Systemd
 from packages import Packages
 from temp_sh import TempSh
+from kde import KDE
 
 target_iso_dir = "archiso"
 archiso = Archiso(target_iso_dir)
@@ -11,6 +12,7 @@ users = Users(target_iso_dir)
 systemd = Systemd(target_iso_dir)
 packages = Packages(target_iso_dir)
 temp_sh = TempSh()
+kde = KDE(target_iso_dir, packages, systemd)
 
 def main():
     loguru.logger.info("Builder is ready.")
@@ -37,8 +39,10 @@ def main():
         'linux-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms'
     ])
     packages.remove_packages(['broadcom-wl', 'grml-zsh-config'])
-    packages.dump_packages()
 
+    kde.install_aio()
+    
+    packages.dump_packages()
 
     systemd.activate_system_service('NetworkManager', 'multi-user')
 
