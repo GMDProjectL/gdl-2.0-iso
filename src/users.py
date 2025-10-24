@@ -21,7 +21,7 @@ class Users(Archiso):
         loguru.logger.info(f'Configuring shadow for {username}')
 
         with open(self.shadow_file, 'a') as f:
-            f.write(f'{username}:x:{gid}:{uid}:{password}:{home}:{shell}' + '\n')
+            f.write(f'{username}::14871::::::' + '\n')
 
     def configure_group(self, username: str, gid: int, group: str):
         loguru.logger.info(f'Configuring group for {username}')
