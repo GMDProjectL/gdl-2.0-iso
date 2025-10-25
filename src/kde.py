@@ -13,7 +13,7 @@ class KDE(Archiso):
     def install_base_kde(self):
         loguru.logger.info("Adding KDE packages")
         self.packages.add_packages([
-            'plasma', 'sddm', 'konsole'
+            'plasma', 'sddm', 'konsole', 'gdl-look-and-feel'
         ])
 
     def setup_autologin(self):
