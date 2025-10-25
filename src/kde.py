@@ -13,8 +13,42 @@ class KDE(Archiso):
     def install_base_kde(self):
         loguru.logger.info("Adding KDE packages")
         self.packages.add_packages([
-            'plasma', 'sddm', 'konsole', 'gdl-look-and-feel',
-            'archlinux-appstream-data', 'packagekit-qt6', 'dolphin', 'kio-admin'
+            'aurorae', 'bluedevil',
+            'breeze', 'breeze-plymouth',
+            'discover', 'flatpak-kcm',
+            'drkonqi',
+            'kactivitymanagerd',
+            'kde-cli-tools', 'kde-gtk-config',
+            'kdecoration',
+            'kdeplasma-addons',
+            'kgamma',
+            'kglobalacceld', 'kscreen',
+            'kinfocenter', 'kmenuedit',
+            'knighttime', 'kpipewire',
+            'krdp', 'kscreen', 'kscreenlocker',
+            'ksshaskpass', 'ksystemstats', 'kwallet-pam',
+            'kwayland', 'kwin', # No Xorg/X11 support, it's 2025, Wayland on Plasma 6 is fine.
+            'kwrited', 'kate',
+            'layer-shell-qt',
+            'libkscreen', 'libplasma',
+            'milou', 'oxygen',
+            'plasma-activities', 'plasma-activities-stats', 'plasma-browser-integration',
+            'plasma-desktop', 'plasma-disks', 'plasma-firewall', 'plasma-integration',
+            'plasma-nm', 'plasma-pa',
+            'plasma-systemmonitor',
+            'plasma-thunderbolt', 'plasma-vault',
+            'plasma-workspace',
+            'plasma5support', 'breeze5',
+            'plymouth-kcm',
+            'polkit-kde-agent',
+            'powerdevil', 'print-manager',
+            'qqc2-breeze-style', 'sddm-kcm',
+            'spectacle',
+            'systemsettings', 'wacomtablet',
+            'xdg-desktop-portal-kde',
+            'sddm', 'konsole', 'gdl-look-and-feel',
+            'archlinux-appstream-data', 'packagekit-qt6', 
+            'kde-system', # Important asf
         ])
 
     def setup_autologin(self):

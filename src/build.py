@@ -38,7 +38,8 @@ def main():
     packages.load_existing_packages()
     packages.add_packages([
         'vulkan-intel', 'vulkan-nouveau', 'vulkan-mesa-layers', 'networkmanager',
-        'linux-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms', 'fish', 'firefox'
+        'linux-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms', 'fish', 'firefox',
+        'cups'
     ])
     packages.remove_packages(['broadcom-wl', 'grml-zsh-config', 'lftp'])
 
