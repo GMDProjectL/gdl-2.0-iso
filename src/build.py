@@ -20,23 +20,25 @@ def main():
     archiso.copy_releng_config()
     archiso.copy_pacman_conf()
     
-    users.configure_user('root', '', '/root', '/usr/bin/zsh', 0, 0)
-    users.configure_shadow('root', '', '/root', '/usr/bin/zsh', 0, 0)
+    users.configure_user('root', '', '/root', '/usr/bin/fish', 0, 0)
+    users.configure_shadow('root', '', '/root', '/usr/bin/fish', 0, 0)
     users.configure_group('root', 0, 'root')
     users.configure_gshadow('root', 'root')
 
-    users.configure_user('liveuser', '', '/home/liveuser', '/usr/bin/zsh', 1000, 1000)
-    users.configure_shadow('liveuser', '', '/home/liveuser', '/usr/bin/zsh', 1000, 1000)
+    users.configure_user('liveuser', '', '/home/liveuser', '/usr/bin/fish', 1000, 1000)
+    users.configure_shadow('liveuser', '', '/home/liveuser', '/usr/bin/fish', 1000, 1000)
 
     for group in ['adm', 'wheel', 'uucp', '']:
         users.configure_group('liveuser', 1000, group)
     
     users.configure_gshadow('liveuser', '')
 
+    users.copy_sudoers()
+
     packages.load_existing_packages()
     packages.add_packages([
         'vulkan-intel', 'vulkan-nouveau', 'vulkan-mesa-layers', 'networkmanager',
-        'linux-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms'
+        'linux-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms', 'fish', 'firefox'
     ])
     packages.remove_packages(['broadcom-wl', 'grml-zsh-config', 'lftp'])
 

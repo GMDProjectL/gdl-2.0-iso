@@ -1,4 +1,5 @@
 import loguru
+import os
 from archiso import Archiso
 from pathlib import Path
 
@@ -10,6 +11,15 @@ class Users(Archiso):
         self.shadow_file = Path(self.target_iso_dir).joinpath('airootfs/etc/shadow')
         self.group_file = Path(self.target_iso_dir).joinpath('airootfs/etc/group')
         self.gshadow_file = Path(self.target_iso_dir).joinpath('airootfs/etc/gshadow')
+
+    def copy_sudoers(self):
+        loguru.logger.info('Copying sudoers...')
+
+        os.system(f'mkdir {self.target_iso_dir}/airootfs/etc/sudoers.d')
+        result = os.system(f'cp ./resources/etc/sudoers.d/* {self.target_iso_dir}/airootfs/etc/sudoers.d/')
+
+        if result != 0:
+            raise Exception('Can\'t copy sudoers.')
 
     def configure_user(self, username: str, password: str, home: str, shell: str, uid: int, gid: int):
         loguru.logger.info(f'Configuring user {username}')
