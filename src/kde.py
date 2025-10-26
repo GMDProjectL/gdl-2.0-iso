@@ -43,12 +43,16 @@ class KDE(Archiso):
             'polkit-kde-agent',
             'powerdevil', 'print-manager',
             'qqc2-breeze-style', 'sddm-kcm',
-            'spectacle',
+            'spectacle', 'systemdgenie',
             'systemsettings', 'wacomtablet',
             'xdg-desktop-portal-kde',
             'sddm', 'konsole', 'gdl-look-and-feel',
             'archlinux-appstream-data', 'packagekit-qt6', 
-            'kde-system', # Important asf
+            'dolphin', 'kio-admin',
+            'kcron', 'kde-inotify-survey',
+            'khelpcenter', 
+            'kjournald',
+            'partitionmanager'
         ])
 
     def setup_autologin(self):
