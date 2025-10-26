@@ -21,7 +21,7 @@ class KDE(Archiso):
             'kde-cli-tools', 'kde-gtk-config',
             'kdecoration',
             'kdeplasma-addons',
-            'kgamma',
+            'kgamma', 'ark', '7zip', 'unarchiver', 'zip', 'unzip',
             'kglobalacceld', 'kscreen',
             'kinfocenter', 'kmenuedit',
             'knighttime', 'kpipewire',
@@ -29,7 +29,7 @@ class KDE(Archiso):
             'ksshaskpass', 'ksystemstats', 'kwallet-pam',
             'kwayland', 'kwin', # No Xorg/X11 support, it's 2025, Wayland on Plasma 6 is fine.
             'kwrited', 'kate',
-            'layer-shell-qt',
+            'layer-shell-qt', 'filelight', 'gwenview',
             'libkscreen', 'libplasma',
             'milou', 'oxygen',
             'plasma-activities', 'plasma-activities-stats', 'plasma-browser-integration',

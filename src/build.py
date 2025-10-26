@@ -39,7 +39,7 @@ def main():
     packages.add_packages([
         'vulkan-intel', 'vulkan-nouveau', 'vulkan-mesa-layers', 'networkmanager',
         'linux-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms', 'fish', 
-        'chromium', # sorry, but, for real, firefox LAGS my VM, Mozilla should really consider doing smth with it
+        'chromium', # sorry, but for real, firefox LAGS my VM, Mozilla should really consider doing smth with it
         'cups', 'grub-customizer'
     ])
     packages.remove_packages(['broadcom-wl', 'grml-zsh-config', 'lftp'])
