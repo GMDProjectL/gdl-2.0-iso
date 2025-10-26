@@ -31,7 +31,7 @@ class KDE(Archiso):
             'kwrited', 'kate',
             'layer-shell-qt', 'filelight', 'gwenview',
             'libkscreen', 'libplasma',
-            'milou', 'oxygen',
+            'milou', 'oxygen', 'haruna',
             'plasma-activities', 'plasma-activities-stats', 'plasma-browser-integration',
             'plasma-desktop', 'plasma-disks', 'plasma-firewall', 'plasma-integration',
             'plasma-nm', 'plasma-pa',
