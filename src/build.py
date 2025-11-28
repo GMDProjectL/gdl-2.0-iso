@@ -41,7 +41,7 @@ def main():
         'linux-zen', 'linux-zen-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms', 'fish', 
         'chromium', # sorry, but for real, firefox LAGS my VM, Mozilla should really consider doing smth with it
         'cups', 'grub-customizer', 'yay-bin', 'rsync', 'python-flask', 'python-requests', 'pyside6',
-        'qqc2-desktop-style', 'qqc2-breeze-style', 'base-devel', 'git'
+        'qqc2-desktop-style', 'qqc2-breeze-style', 'base-devel', 'git', 'os-prober'
     ])
     packages.remove_packages(['broadcom-wl', 'grml-zsh-config', 'lftp', 'linux', 'linux-headers'])
 
@@ -55,6 +55,7 @@ def main():
     archiso.copy_grub_config()
     archiso.copy_systemd_boot_config()
     archiso.copy_os_release()
+    archiso.copy_default_grub_cfg()
 
     archiso.build_iso()
     temp_sh.upload()

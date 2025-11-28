@@ -25,13 +25,32 @@ class Archiso:
         loguru.logger.info(f'Copying pacman.conf...')
 
         if os.system(f'rm {self.target_iso_dir}/pacman.conf') != 0:
-            raise Exception(f'Unable to remove old pacman.conf. Code: {result}')
+            raise Exception(f'Unable to remove old pacman.conf.')
 
         os.system(f'cp ./resources/archiso/pacman.conf {self.target_iso_dir}/airootfs/etc/pacman.conf') # Maybe this works????
         result = os.system(f'cp ./resources/archiso/pacman.conf {self.target_iso_dir}/pacman.conf')
         
         if result != 0:
             raise Exception(f'Failed to pacman.conf. Code: {result}')
+    
+
+    def copy_default_grub_cfg(self):
+        loguru.logger.info(f'Copying default GRUB config...')
+
+        default_dir = f'{self.target_iso_dir}/airootfs/etc/default'
+
+        if not os.path.exists(default_dir):
+            os.makedirs(default_dir)
+
+        target = f'{default_dir}/grub'
+
+        if os.system(f'rm {target}') != 0:
+            raise Exception(f'Unable to remove old grub defconfig.')
+
+        result = os.system(f'cp ./resources/etc/default/grub {target}')
+        
+        if result != 0:
+            raise Exception(f'Failed to copy default GRUB config. Code: {result}')
     
 
     def copy_profile_def(self):
