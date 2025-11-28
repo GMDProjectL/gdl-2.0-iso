@@ -25,7 +25,10 @@ class Packages(Archiso):
     
     def remove_packages(self, packages: List[str]):
         for package in packages:
-            self.packages.remove(package)
+            try:
+                self.packages.remove(package)
+            except:
+                print(f'No package named {package} was present.')
     
     def dump_packages(self):
         loguru.logger.info(f'Dumped {len(self.packages)} packages into {self.packages_file}...')
