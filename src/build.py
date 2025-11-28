@@ -40,7 +40,8 @@ def main():
         'vulkan-intel', 'vulkan-nouveau', 'vulkan-mesa-layers', 'networkmanager',
         'linux-headers', 'dkms', 'mesa-utils', 'broadcom-wl-dkms', 'fish', 
         'chromium', # sorry, but for real, firefox LAGS my VM, Mozilla should really consider doing smth with it
-        'cups', 'grub-customizer', 'yay-bin', 'rsync'
+        'cups', 'grub-customizer', 'yay-bin', 'rsync', 'python-flask', 'python-requests', 'pyside6',
+        'qqc2-desktop-style', 'qqc2-breeze-style', 'base-devel', 'git'
     ])
     packages.remove_packages(['broadcom-wl', 'grml-zsh-config', 'lftp'])
 
