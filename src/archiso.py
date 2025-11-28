@@ -43,10 +43,7 @@ class Archiso:
             os.makedirs(default_dir)
 
         target = f'{default_dir}/grub'
-
-        if os.system(f'rm {target}') != 0:
-            raise Exception(f'Unable to remove old grub defconfig.')
-
+        
         result = os.system(f'cp ./resources/etc/default/grub {target}')
         
         if result != 0:
