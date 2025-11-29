@@ -5,6 +5,7 @@ from systemd import Systemd
 from packages import Packages
 from temp_sh import TempSh
 from kde import KDE
+from installer import Installer
 
 target_iso_dir = "archiso"
 archiso = Archiso(target_iso_dir)
@@ -12,6 +13,7 @@ users = Users(target_iso_dir)
 systemd = Systemd(target_iso_dir)
 packages = Packages(target_iso_dir)
 temp_sh = TempSh()
+installer = Installer(target_iso_dir, packages, systemd)
 kde = KDE(target_iso_dir, packages, systemd)
 
 def main():
@@ -56,6 +58,11 @@ def main():
     archiso.copy_systemd_boot_config()
     archiso.copy_os_release()
     archiso.copy_default_grub_cfg()
+
+    installer.clone_installer()
+    installer.create_gui_autostart()
+    installer.create_server_systemd_service()
+    installer.activate_server_systemd_service()
 
     archiso.build_iso()
     temp_sh.upload()
