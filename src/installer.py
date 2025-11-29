@@ -60,7 +60,7 @@ class Installer(Archiso):
                 'GuessMainPID=no' + '\n' +
                 'RemainAfterExit=no' + '\n' +
                 'WorkingDirectory=/opt/installer/server' + '\n' +
-                'ExecStart=/opt/installer/server/run.sh' + '\n' +
+                'ExecStart=/usr/bin/flask --app main run' + '\n' +
 
                 '[Install]' + '\n' +
                 'WantedBy=multi-user.target' + '\n'
