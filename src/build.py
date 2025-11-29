@@ -60,6 +60,8 @@ def main():
     archiso.copy_default_grub_cfg()
 
     installer.clone_installer()
+    installer.chmod_server_run_sh()
+    installer.chmod_gui_run_sh()
     installer.create_gui_autostart()
     installer.create_server_systemd_service()
     installer.activate_server_systemd_service()
