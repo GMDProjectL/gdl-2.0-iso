@@ -26,7 +26,7 @@ class Installer(Archiso):
         with open(desktop_file, 'w') as f:
             f.write(
                 '[Desktop Entry]' + '\n' +
-                'Exec=/opt/installer/main.py' + '\n' +
+                'Exec=python3 /opt/installer/main.py' + '\n' +
                 'Path=/opt/installer' + '\n' +
                 'Icon=' + '\n' +
                 'Name=GDL Installer' + '\n' +
