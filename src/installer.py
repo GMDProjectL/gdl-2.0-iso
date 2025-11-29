@@ -17,7 +17,7 @@ class Installer(Archiso):
         return os.system(f'git clone {self.installer_dir_location}') == 0
     
     def create_gui_autostart(self):
-        autostart_dir = f'{self.target_iso_dir}/airootfs/etc/xdg/autostart'
+        autostart_dir = f'{self.target_iso_dir}/airootfs/etc/skel/.config/autostart'
         desktop_file = f'{autostart_dir}/installer-gui.desktop'
 
         if not os.path.exists(autostart_dir):
