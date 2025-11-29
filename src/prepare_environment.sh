@@ -9,5 +9,5 @@ distrobox create --root --image archlinux --name ${ARCH_CONTAINER_NAME} -Y
 
 distrobox enter --root ${ARCH_CONTAINER_NAME} -- \
     sudo pacman -Syu \
-        arch-install-scripts archiso python-loguru python-requests \
+        arch-install-scripts archiso python-loguru python-requests git \
         --noconfirm
